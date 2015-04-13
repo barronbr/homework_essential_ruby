@@ -59,22 +59,30 @@ end
 
 def variance(list_of_numbers)
   # Let's re-use the work we did above in the mean method
+
+  #finding the variance between the mean and the number
   list_of_numbers.each do |vary|
     if average > number
       vary = average.to_i - number.to_i
     ifelse
       vary = number.to_i - average.to_i
     end
+
 #squaring the difference
   var_2 = vary.to_i * vary.to_i
 
+#adding the squares together
   running_total_2 = 0
 
-  vary.each do |add|
+  var_2.each do |add|
     var_running_total = running_total_2 + add
   end
 
   return var_running_total
+
+#taking the mean of the squared differences
+  var_total = var_running_total / var_2.count
+  return var_total
 
 end
 
