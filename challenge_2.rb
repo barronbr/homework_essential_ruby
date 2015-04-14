@@ -35,14 +35,17 @@ principal_amount = 200000.0
 # You shouldn't have to write code or change code anywhere else.
 
 # def payment(loan_quotes)
-loan_quotes.each do |pay|
-  the_payment = pmt("#{pay["annual_rate"]}".to_f, number_of_monthly_payments, principal_amount)
-  puts the_payment.round(2)
-end
+  loan_quotes.each do |pay|
+    the_payment = pmt("#{pay["annual_rate"]}".to_f, number_of_monthly_payments, principal_amount)
+    puts "the monthly payment for #{pay["bank"]} will be $" + the_payment.round(2).to_s
+  end
 # end
 
-# loan1 = payment(loan_quotes).each
-# puts "#{loan1}" + "kjadklfjal"
+# first_data = "#{loan_quotes["annual_rate"]}".to_f
+# stuff = payment(first_data)
+# puts "kdjlajdkf #{stuff}"
+# # loan1 = payment(loan_quotes).each
+# # puts "#{loan1}" + "kjadklfjal"
 
 
 # puts payment(0)
