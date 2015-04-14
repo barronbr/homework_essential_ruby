@@ -33,7 +33,6 @@ def sum(list_of_numbers)
     running_total = running_total + number
   end
 
-  return running_total
 end
 
 # MEAN
@@ -44,8 +43,14 @@ end
 
 def mean(list_of_numbers)
   # Let's re-use the work we did above in the sum method
+  running_total = 0
+  list_of_numbers.each do |number|
+    running_total = running_total + number
+  end
+
+
   average = running_total / list_of_numbers.count
-  return average
+
 end
 
 # VARIANCE
@@ -59,32 +64,25 @@ end
 
 def variance(list_of_numbers)
   # Let's re-use the work we did above in the mean method
-
-  #finding the variance between the mean and the number
-  list_of_numbers.each do |vary|
-    if average > number
-      vary = average.to_i - number.to_i
-    ifelse
-      vary = number.to_i - average.to_i
-    end
-
-#squaring the difference
-  var_2 = vary.to_i * vary.to_i
-
-#adding the squares together
-  running_total_2 = 0
-
-  var_2.each do |add|
-    var_running_total = running_total_2 + add
+  running_total = 0
+  list_of_numbers.each do |number|
+    running_total = running_total + number
   end
 
-  return var_running_total
+  average = running_total / list_of_numbers.count
 
-#taking the mean of the squared differences
-  var_total = var_running_total / var_2.count
-  return var_total
+  #finding the variance between the mean and the number
+  sum_squares = 0
+  list_of_numbers.each do |number|
+    vary = average - number
+    square_vary = vary * vary
+    sum_squares = sum_squares + square_vary
+    end
 
+  running_total_2 = sum_squares / list_of_numbers.count
+  puts running_total_2
 end
+
 
 # STANDARD DEVIATION
 # ==================
@@ -92,7 +90,27 @@ end
 #  - take the square root of the variance
 
 def standard_deviation(list_of_numbers)
-  std_dev =
+  running_total = 0
+  list_of_numbers.each do |number|
+    running_total = running_total + number
+  end
+
+  average = running_total / list_of_numbers.count
+  # return average
+
+  #finding the variance between the mean and the number
+  sum_squares = 0
+  list_of_numbers.each do |number|
+    vary = average - number
+    square_vary = vary * vary
+    sum_squares = sum_squares + square_vary
+    end
+
+  running_total_2 = sum_squares / list_of_numbers.count
+  puts running_total_2
+
+  std_dev = running_total_2**0.5
+  return std_dev
 end
 
 
