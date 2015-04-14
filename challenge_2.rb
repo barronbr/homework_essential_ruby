@@ -37,7 +37,7 @@ principal_amount = 200000.0
 
   loan_quotes.each do |pay|
     the_payment = pmt("#{pay["annual_rate"]}".to_f, number_of_monthly_payments, principal_amount)
-    puts "the monthly payment for #{pay["bank"]} will be $" + the_payment.round(2).to_s + "."
+    puts "The monthly payment for #{pay["bank"]} will be $" + the_payment.round(2).to_s + "."
   end
 
 # ==============================================================
