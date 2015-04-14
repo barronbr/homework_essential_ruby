@@ -107,7 +107,7 @@ def standard_deviation(list_of_numbers)
     end
 
   running_total_2 = sum_squares / list_of_numbers.count
-  puts running_total_2
+  # puts running_total_2
 
   std_dev = running_total_2**0.5
   return std_dev
